@@ -1,0 +1,19 @@
+{
+  "name": "crawler-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meihei3/crawler-base.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meihei3/crawler-base/issues"
+  },
+  "homepage": "https://github.com/meihei3/crawler-base#readme"
+}
