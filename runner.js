@@ -3,21 +3,16 @@ const cliProgress = require('cli-progress');
 const fs = require('fs');
 const path = require('path');
 
-/**
- * @param {puppeteer.page} page
- */
-const deleteCookies = async (page) => {
-  const client = await page.target().createCDPSession()
-  await client.send('Network.clearBrowserCookies')
-}
-
 (async () => {
   const files = fs.readdirSync('./tasks/');
-  const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+  const progressBar = new cliProgress.SingleBar(
+    {},
+    cliProgress.Presets.shades_classic
+  );
   progressBar.start(files.length, 0);
 
   // headless: true でヘッドレスモードで起動する
-  const browser = await puppeteer.launch({headless: false});
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage({ width: 2440, height: 900 });
 
   for (let file of files) {
